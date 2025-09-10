@@ -1,0 +1,7 @@
+[Unit]
+Description=oFono ringback tone generator
+
+[Service]
+Type=simple
+ExecStart=/usr/libexec/ofono-toned
+Restart=on-failure
