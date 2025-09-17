@@ -13,4 +13,5 @@ Vcs-Git: https://github.com/furilabs/ofono-toned.git
 Package: ofono-toned
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends},
+         tone-generator,
 Description: oFono ringback tone generator
