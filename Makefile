@@ -1,9 +1,9 @@
 CC = gcc
 
 CFLAGS = `pkg-config --cflags gio-2.0` -Iinclude
-LDFLAGS = `pkg-config --libs gio-2.0`
+LDFLAGS = `pkg-config --libs gio-2.0 libpulse-mainloop-glib`
 
-SOURCES = src/main.c src/ofono.c src/test.c
+SOURCES = src/main.c src/ofono.c src/test.c src/pulse.c
 
 TARGET = ofono-toned
 

@@ -11,6 +11,7 @@ static GMainLoop *main_loop = NULL;
 static void
 cleanup(void)
 {
+    pulse_cleanup_listener();
     cleanup_ofono();
     cleanup_test();
 }
@@ -72,6 +73,10 @@ main(int argc, char *argv[])
 
     g_autoptr(GError) session_error = NULL;
     agent_data->session_bus = g_bus_get_sync(G_BUS_TYPE_SESSION, NULL, &session_error);
+
+    if (!pulse_setup_listener(NULL)) {
+        g_warning("Failed to set up Pulse listener");
+    }
 
     if (!session_error) {
         g_autoptr(GDBusNodeInfo) introspection_data = g_dbus_node_info_new_for_xml(introspection_xml, NULL);

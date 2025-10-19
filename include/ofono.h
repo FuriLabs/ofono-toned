@@ -6,6 +6,8 @@
 #ifndef OFONO_H
 #define OFONO_H
 
+#include "pulse.h"
+
 #include <gio/gio.h>
 
 #define OFONO_SERVICE "org.ofono"
@@ -34,6 +36,7 @@ typedef struct {
     gboolean playing_tone;
     gboolean should_play_tone;
     gboolean ofono_available;
+    PulseState *pulse;
 } AgentData;
 
 extern AgentData *agent_data;

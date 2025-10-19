@@ -274,7 +274,6 @@ register_agent(void)
                 g_object_unref(agent_data->vcm_proxy);
                 agent_data->vcm_proxy = NULL;
             } else {
-                g_debug("Agent registered successfully");
                 g_clear_pointer(&modem_path, g_free);
                 g_clear_pointer(&properties, g_variant_unref);
                 return TRUE;
